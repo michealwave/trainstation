@@ -80,4 +80,4 @@ while True:
 			print("Scissors beat Paper!")
 			playerScore += 1
 	else: #print type something else
-		print("Invalid Input, try again")
+		print("Invalid Input, try again monkey")
