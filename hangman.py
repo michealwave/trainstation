@@ -1,54 +1,51 @@
 import time
-import os
 myword = "shrimp"
-#how to check if a letter is in a word
 mylist = list(myword)
 guesslist = []
-turns = 10
 miss = []
 failed = 0
-frame1 = '''
+framelist = ['''
  +---+
      |
      |
      |
-    ==='''
-frame2 = '''
+    ===''',
+'''
  +---+
  0   |
      |
      |
-    ==='''
-frame3 = '''
+    ===''',
+'''
  +---+
  0   |
  |   |
      |
-    ==='''
-frame4 = '''
+    ===''',
+'''
  +---+
  0   |
  |\  |
      |
-    ==='''
-frame5 = '''
+    ===''',
+'''
  +---+
  0   |
 /|\  |
      |
-    ==='''
-frame6 = '''
+    ===''',
+'''
  +---+
  0   |
 /|\  |
 /    |
-    ==='''
-frame7 = '''
+    ===''',
+'''
  +---+
  0   |
 /|\  |
 / \  |
-    ==='''
+    ===''']
 for letter in mylist:
 	guesslist.append("_") 
 print(guesslist)
@@ -56,9 +53,12 @@ print(guesslist)
 for letter2 in miss:
 	guesslist.append("_")
 print(miss)
-print(frame1)
+print(framelist[0])
 while True:
 	letter = input("Enter a letter: ")
+	print("You have 30 seconds to choose a letter")
+
+	
 	if letter == "s":
 		guesslist[0] = "s"
 		
@@ -77,19 +77,23 @@ while True:
 	elif letter == "p":
 		guesslist[5] = "p"
 	else:
-		frame1 = frame2
 		miss.append(letter)
 		failed = failed + 1
-        
+
+	if failed < 1:
+		print(framelist[0])
+	else:
+		print(framelist[len(miss)])
 	print(guesslist)	
 	print(miss)
-	print(frame1)
 	if failed == 6:
 		print("GAME OVER")
 		break
 	if guesslist == mylist:
 		print("You Win!")
 		break
+
+
 		
 
 	
