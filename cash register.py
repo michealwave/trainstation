@@ -33,11 +33,13 @@ change = change % 10
 nickels = int(change / 5)
 change = change % 5
 
+pennies = change
+change = given - price
 
-print(change)
-print(dollars)
-print(halfdollar)
-print(quarter)
-print(dime)
-print(nickels)
-print("Change: " + change)
+print("Change: " + str(change))
+print("Dollars: " + str(dollars))
+print("Half Dollars: " + str(halfdollar))
+print("Quarters: " + str(quarter))
+print("Dimes: " + str(dime))
+print("Nickels: " + str(nickels))
+print("Pennies: " + str(pennies))
